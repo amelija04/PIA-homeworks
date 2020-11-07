@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+<!--
+	Domaci 1 (PIA 2020)
+	-->
+
+<head>
+  <title>PIA HW - Movie review</title>
+  <meta name="author" content="Amelija Vuckovic" />
+  <meta charset="utf-8" />
+  <meta name="description" content="HTML/CSS homework assignment." />
+  <meta name="keywords" content="pia, web programming, html, css" />
+
 <style>
     body{
         background-image:url("background.png");
@@ -91,5 +104,122 @@
         list-style-type:none;
     }
 
+ </style>
+ </head>
+ 
+ <body>
 
-    </style>
+
+    <h1>Beauty and the beast</h1>
+    <div class="l">
+    <p class="image"><img src="freshbig.png" alt="freshbig" height="70">93%</p>
+    <p class="block"><img src="fresh.gif" alt="fresh"> "Truly one of the greatest animated films ever put on the big screen. This film is extremely emotional, romantic, and magical."</p>
+    <p class="critic"><img src="critic.gif" alt="critic">Ava Edvard
+    </br>
+    <i>IMBD</i></p>
+    <p class="block"><img src="rotten.gif" alt="rotten"> "It is more like a musical, than an animated film, there should be less singing"</p>
+    <p class="critic"><img src="critic.gif" alt="critic">Cole Waters
+    </br>
+    <i>IMBD</i></p>
+    <p class="block"><img src="rotten.gif" alt="rotten"> "I think this movie is not so interesting, and i don't like the story"</p>
+    <p class="critic"><img src="critic.gif" alt="critic">Stephanie Merry
+    </br>
+    <i>The Washington Post</i></p>
+    <p class="block"><img src="fresh.gif" alt="fresh"> " Who can resist this beautiful story? I love the fact that even though Belle hated Beast at first, she saw underneath that he was a kind and gentle soul, and didn't care what he looked like on the outside! "</p>
+    <p class="critic"><img src="critic.gif" alt="critic">Liesl Schillinger
+    </br>
+    <i>The New Yotk Times</i></p>
+    <p class="block"><img src="fresh.gif" alt="fresh"> " Miraculous, nothing short of captivating, breathtaking, and a masterpiece. "</p>
+    <p class="critic"><img src="critic.gif" alt="critic">Clare Watson
+    </br>
+    <i>Vanity Fair</i></p>
+    <p class="block"><img src="fresh.gif" alt="fresh"> " 'Beauty and the Beast' remains the first, and likely only, animated film to ever be nominated for the Oscar's Best Picture. It is perhaps the highest accolade ever bestowed on the world of animation, that they could compete with the best of Hollywood's live-action batch. "</p>
+    <p class="critic"><img src="critic.gif" alt="critic">Brandon Spector
+    </br>
+    <i>Vanity Fair</i></p>
+    <p class="block"><img src="rotten.gif" alt="rotten"> "The story itself is a little too controversial- a beauty falling in love with her tormentor. The message it gives to children is not clear enough."</p>
+    <p class="critic"><img src="critic.gif" alt="critic">Susan Woods
+    </br>
+    <i>Metacritic</i></p>
+    <p class="block"><img src="fresh.gif" alt="fresh"> " Wised-up as well as traditional, with a striking and detailed look and a strong storyline, it is sure to charm a wide audience both now and for a long time to come. "</p>
+    <p class="critic"><img src="critic.gif" alt="critic">Thomas Stanton
+    </br>
+    <i>Metacritic</i></p>
+    <p class="block"><img src="fresh.gif" alt="fresh"> " Beauty and the Beast is a heartwarming classic for all the family to enjoy. I love the character of Belle, who is no damsel in distress, but headstrong and determined, as well as beautiful.  "</p>
+    <p class="critic"><img src="critic.gif" alt="critic">Lana Brown
+    </br>
+    <i>Entertainment Weekly</i></p>
+    </div>
+
+    <div class="right">
+    <img src="Beauty.jpg" alt="Beauty and the beast" width="280" height="300" float="right" >
+    <b>
+    <dl>
+        <dt>STARRING</dt>
+        <dd>
+            Paige O'Hara</br>
+            Robby Benson</br>
+            Richard White</br>
+            Jerry Orbach
+        </dd>
+
+        <dt>DIRECTORS</dt>
+        <dd>Gary Trousdale,Kirk Wise</dd>
+
+        <dt>RATING</dt>
+        <dd>G</dd>
+
+         <dt>THEATRICAL RELEASE</dt>
+        <dd>November 22, 1991</dd>
+
+        <dt>MOVIE SYNOPSIS</dt>
+        <dd>
+            A prince cursed to spend his days as a hideous monster sets out to regain his humanity by earning a young woman's love.
+        </dd>
+
+        <dt>MPAA RATING</dt>
+        <dd>G</dd>
+
+        <dt>STUDIO</dt>
+        <dd>Buena Vista</dd>
+
+        <dt>RUNTIME</dt>
+        <dd>84 mins</dd>
+
+        <dt>GENRE</dt>
+        <dd>
+            Animation, Romance, Fantasy, Childrens, Musical
+        </dd>
+
+        <dt>BOX OFFICE</dt>
+        <dd>$440,100,000</dd>
+
+        <dt>LINKS</dt>
+        <dd>
+            <ul>
+                <li>
+                    <a href="https://movies.disney.com/beauty-and-the-beast" target="_blank">The Official Beauty and the Beast Site</a>
+                </li>
+                <li>
+                    <a href="https://www.rottentomatoes.com/m/beauty_and_the_beast_1991" target="_blank">RT Review</a>
+                </li>
+                <li>
+                    <a href="https://www.rottentomatoes.com/" target="_blank">RT Home</a>
+                </li>
+            </ul>
+        </dd>
+    </dl>
+    </b>
+    </div>
+    <footer>
+        <p>(1-10) of 88</p>
+    </footer>
+    <div id="w3c">
+        <a href="images/validate-html.php"><img src="w3c-html.png" alt="Valid HTML5" style="float:right;"></a></br></br>
+        <a href="images/validate-css.php"><img src="w3c-css.png" alt="Valid CSS" style="float:right;" ></a>
+    </div>
+
+</body>
+
+</html>
+
