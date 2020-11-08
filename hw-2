@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+<title>PIA HW - Picerija</title>
+    <meta name="author" content="Amelija Vuckovic" />
+    <meta charset="utf-8" />
+    <meta name="description" content="HTML/CSS homework assignment." />
+    <meta name="keywords" content="pia, web programming, html, css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    body{
+
+        background: linear-gradient(to bottom right, #780000 0%, #d80000 100%);
+    }
+    div.a{
+        color:white;
+        margin-left:10px;
+    }
+    h3{
+        font-family:'Lemon';
+        font-size:25px;
+        font-weight: bold;
+    }
+    p{
+        font-family:"Times New Roman", Times, serif;
+        font-size:15px;
+    }
+    img{
+        height:100px;
+        width: 100px;
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Mama mia</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <li><a href="#">O nama</a></li>
+            <li><a href="#">Meni</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </div>
+    </nav>
+    <div class="a">
+    </br>
+    </br>
+    </br>
+
+        <h3>O nama</h3>
+        <p>Nasa picerija nudi veliki izbor razlicitih vrsta pice </br></p>
+    </div>
+    <div class="container">
+
+    <a href="#" data-toggle="popover" title="Capricciosa" data-trigger="focus" data-content="Mocarela, maslinke, sunka, sampinjoni, pelat"><img src="Capricciosa.jpg" class="img-circle" alt="Capricciosa" /></a>
+
+    </div>  </br>
+
+    <div class="container">
+
+    <a href="#" data-toggle="popover" title="Margarita" data-trigger="focus" data-content="Pelat, mocarela, maslinke, bosiljak"><img src="Margarita.jpg" class="img-circle" alt="Margarita" /></a>
+
+    </div>    </br>
+
+    <div class="container">
+
+    <a href="#" data-toggle="popover" title="Quattro Formaggi" data-trigger="focus" data-content="Mocarela, bergarder, gorgonzola, ementaler, parmezan, masline, ruzmarin"><img src="Quattro Formaggi.jpg" class="img-circle" alt="Quattro Formaggi" /></a>
+
+    </div>  </br>
+
+    <div class="container">
+
+    <a href="#" data-toggle="popover" title="Vezuvio" data-trigger="focus" data-content="Pelat, mocarela, sunka, maslinke, origano"><img src="Vezuvio.jpg" class="img-circle" alt="Vezuvio" /></a>
+
+    </div>   </br>
+
+    <div class="container">
+
+    <a href="#" data-toggle="popover" title="Vegetariana" data-trigger="focus" data-content="Pelat, kackavalj, sampinjoni, sveza paprika, tikvice, crveni luk, paradajz, maslinke"><img src="Vegetariana.jpg" class="img-circle" alt="Vegetariana" /></a>
+
+    </div>
+
+    <script>
+     $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+    });
+    </script>
+
+
+</body>
+
+</html>
