@@ -25,7 +25,7 @@
         font-family:'Lemon';
         font-size:25px;
         font-weight: bold;
-        color:white;
+        color:#008B8B;
         margin-left: 15px;
     }
     p{
@@ -36,11 +36,9 @@
        text-align: right;
        padding:2px;
        background-color: #780000;
-       color: white;
+       
     }
-    div.b{
-        color:lavender;
-    }
+   
 
     </style>
 </head>
@@ -74,7 +72,7 @@
     </div>
     <h3 id="meni">Meni</h3>
 
-    <div class="b">
+    
     <div class="container">
     <a href="#" data-toggle="popover" title="Capricciosa" data-trigger="focus" data-content="Mocarela, maslinke, sunka, sampinjoni, pelat.   Mala:160 Srednja:440 Porodicna:600"><img src="Capricciosa.jpg" class="img-circle" alt="Capricciosa" height="80" width="80"/></a>
     <div class="form-group">
@@ -215,7 +213,7 @@
             </div>
         </div>
     </form>
-    </div>
+    
 
     <footer>
     <p><a href="https://www.instagram.com/"><img src="instagram.png" alt="instagram"  height="30" width="30" ></a>
