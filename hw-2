@@ -25,16 +25,18 @@
         font-family:'Lemon';
         font-size:25px;
         font-weight: bold;
+        color:white;
+        margin-left: 15px;
     }
     p{
-        font-family:"Times New Roman", Times, serif;
+        font-family:Arial, Helvetica, sans-serif;
         font-size:15px;
     }
-     footer {
-    text-align: right;
-    padding:2px;
-    background-color: black;
-    color: white;
+    footer {
+       text-align: right;
+       padding:2px;
+       background-color: #780000;
+       color: white;
     }
     div.b{
         color:lavender;
@@ -51,9 +53,9 @@
         </div>
 
         <ul class="nav navbar-nav">
-            <li><a href="#">O nama</a></li>
-            <li><a href="#">Meni</a></li>
-            <li><a href="#">Kontakt</a></li>
+            <li><a href="#o nama">O nama</a></li>
+            <li><a href="#meni">Meni</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
         </ul>
     </div>
     </nav>
@@ -62,7 +64,7 @@
     </br>
     </br>
 
-        <h3>O nama</h3>
+        <h3 id="o nama">O nama</h3>
         <p>Nasa picerija nudi veliki izbor razlicitih vrsta pice. U modernom ambijentu picerije Mamma mia, za vas potpuni uzitak </br>
         pobrinuce se nase ljubazno osoblje. U nasoj kuhinji zagarantovana
         je originalna i tradicionalna priprema italijanske kuhinje.</br>
@@ -70,7 +72,7 @@
         Vasem domu osetite jedinstveni ukus mediterana i to po pristupačnoj ceni.</br>
         Nasa picerija nalazi se u ulici Cara Lazara 38. Ocekujemo vas!</p></p>
     </div>
-    <h3>Meni</h3>
+    <h3 id="meni">Meni</h3>
 
     <div class="b">
     <div class="container">
@@ -195,7 +197,7 @@
     </br>
     </br>
 
-    <h3>Kontakt</h3>
+    <h3 id="kontakt">Kontakt</h3>
 
     <form class="form-horizontal" action="/action_page.php">
         <div class="form-group">
