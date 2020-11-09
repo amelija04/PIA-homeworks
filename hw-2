@@ -43,7 +43,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" >
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Mama mia</a>
+            <a class="navbar-brand" href="#">Mamma mia</a>
         </div>
 
         <ul class="nav navbar-nav">
@@ -59,35 +59,123 @@
     </br>
 
         <h3>O nama</h3>
-        <p>Nasa picerija nudi veliki izbor razlicitih vrsta pice </br></p>
+        <p>Nasa picerija nudi veliki izbor razlicitih vrsta pice. U modernom ambijentu picerije Mamma mia, za vas potpuni uzitak </br>
+        pobrinuce se nase ljubazno osoblje. U nasoj kuhinji zagarantovana
+        je originalna i tradicionalna priprema italijanske kuhinje.</br>
+        Vrsimo i brzu dostavu, tako da su se nasi majstori pobrinuli da i u
+        Vasem domu osetite jedinstveni ukus mediterana i to po pristupačnoj ceni.</br>
+        Nasa picerija nalazi se u ulici Cara Lazara 38. Ocekujemo vas!</p></p>
     </div>
     <div class="container">
 
     <a href="#" data-toggle="popover" title="Capricciosa" data-trigger="focus" data-content="Mocarela, maslinke, sunka, sampinjoni, pelat"><img src="Capricciosa.jpg" class="img-circle" alt="Capricciosa" /></a>
+    <div class="form-group">
+            <label for="sel1" >Izaberi velicinu:</label>
+            <select class="form-control"  id="sel1">
+                <option>Mala</option>
+                <option>Srednja</option>
+                <option>Porodicna</option>
+            </select>
+            </div>
+            <div class="col-xs-2">
+                <label for="ex1">Kolicina:</label>
+                <input class="form-control" id="ex1" type="text">
+            </div>
+            <button type="button" class="btn">Naruci</button>
 
     </div>  </br>
 
     <div class="container">
 
-    <a href="#" data-toggle="popover" title="Margarita" data-trigger="focus" data-content="Pelat, mocarela, maslinke, bosiljak"><img src="Margarita.jpg" class="img-circle" alt="Margarita" /></a>
+    <a href="#" data-toggle="popover" data-placement="left" title="Margarita" data-trigger="focus" data-content="Pelat, mocarela, maslinke, bosiljak"><img src="Margarita.jpg" class="img-circle" alt="Margarita" /></a>
+    <div class="form-group">
+            <label for="sel1" >Izaberi velicinu:</label>
+            <select class="form-control"  id="sel1">
+                <option>Mala</option>
+                <option>Srednja</option>
+                <option>Porodicna</option>
+            </select>
+            </div>
+            <div class="col-xs-2">
+                <label for="ex1">Kolicina:</label>
+                <input class="form-control" id="ex1" type="text">
+            </div>
+            <button type="button" class="btn">Naruci</button>
 
     </div>    </br>
 
     <div class="container">
 
     <a href="#" data-toggle="popover" title="Quattro Formaggi" data-trigger="focus" data-content="Mocarela, bergarder, gorgonzola, ementaler, parmezan, masline, ruzmarin"><img src="Quattro Formaggi.jpg" class="img-circle" alt="Quattro Formaggi" /></a>
+    <div class="form-group">
+            <label for="sel1" >Izaberi velicinu:</label>
+            <select class="form-control"  id="sel1">
+                <option>Mala</option>
+                <option>Srednja</option>
+                <option>Porodicna</option>
+            </select>
+            </div>
+            <div class="col-xs-2">
+                <label for="ex1">Kolicina:</label>
+                <input class="form-control" id="ex1" type="text">
+            </div>
+            <button type="button" class="btn">Naruci</button>
 
     </div>  </br>
 
     <div class="container">
 
-    <a href="#" data-toggle="popover" title="Vezuvio" data-trigger="focus" data-content="Pelat, mocarela, sunka, maslinke, origano"><img src="Vezuvio.jpg" class="img-circle" alt="Vezuvio" /></a>
+    <a href="#" data-toggle="popover" data-placement="left" title="Vezuvio" data-trigger="focus" data-content="Pelat, mocarela, sunka, maslinke, origano"><img src="Vezuvio.jpg" class="img-circle" alt="Vezuvio" /></a>
+    <div class="form-group">
+            <label for="sel1" >Izaberi velicinu:</label>
+            <select class="form-control"  id="sel1">
+                <option>Mala</option>
+                <option>Srednja</option>
+                <option>Porodicna</option>
+            </select>
+            </div>
+            <div class="col-xs-2">
+                <label for="ex1">Kolicina:</label>
+                <input class="form-control" id="ex1" type="text">
+            </div>
+            <button type="button" class="btn">Naruci</button>
 
     </div>   </br>
 
     <div class="container">
 
     <a href="#" data-toggle="popover" title="Vegetariana" data-trigger="focus" data-content="Pelat, kackavalj, sampinjoni, sveza paprika, tikvice, crveni luk, paradajz, maslinke"><img src="Vegetariana.jpg" class="img-circle" alt="Vegetariana" /></a>
+    <div class="form-group">
+            <label for="sel1" >Izaberi velicinu:</label>
+            <select class="form-control"  id="sel1">
+                <option>Mala</option>
+                <option>Srednja</option>
+                <option>Porodicna</option>
+            </select>
+            </div>
+            <div class="col-xs-2">
+                <label for="ex1">Kolicina:</label>
+                <input class="form-control" id="ex1" type="text">
+            </div>
+            <button type="button" class="btn">Naruci</button>
+
+    </div>  </br>
+
+    <div class="container">
+
+    <a href="#" data-toggle="popover" data-placement="left" title="Quattro stagioni" data-trigger="focus" data-content="1/4 Capriccosa, 1/4 Pepperoni, 1/4 Quattro Formaggi, 1/4 suvo meso"><img src="Quattro stagioni.jpg" class="img-circle" alt="Quattro stagioni" /></a><div class="form-group">
+            <label for="sel1" >Izaberi velicinu:</label>
+            <select class="form-control"  id="sel1">
+                <option>Mala</option>
+                <option>Srednja</option>
+                <option>Porodicna</option>
+            </select>
+            </div>
+            <div class="col-xs-2">
+                <label for="ex1">Kolicina:</label>
+                <input class="form-control" id="ex1" type="text">
+            </div>
+            <button type="button" class="btn">Naruci</button>
 
     </div>
 
