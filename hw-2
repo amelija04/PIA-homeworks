@@ -30,11 +30,15 @@
         font-family:"Times New Roman", Times, serif;
         font-size:15px;
     }
-    img{
-        height:100px;
-        width: 100px;
+     footer {
+    text-align: right;
+    padding:2px;
+    background-color: black;
+    color: white;
     }
-
+    div.b{
+        color:lavender;
+    }
 
     </style>
 </head>
@@ -66,9 +70,11 @@
         Vasem domu osetite jedinstveni ukus mediterana i to po pristupačnoj ceni.</br>
         Nasa picerija nalazi se u ulici Cara Lazara 38. Ocekujemo vas!</p></p>
     </div>
-    <div class="container">
+    <h3>Meni</h3>
 
-    <a href="#" data-toggle="popover" title="Capricciosa" data-trigger="focus" data-content="Mocarela, maslinke, sunka, sampinjoni, pelat"><img src="Capricciosa.jpg" class="img-circle" alt="Capricciosa" /></a>
+    <div class="b">
+    <div class="container">
+    <a href="#" data-toggle="popover" title="Capricciosa" data-trigger="focus" data-content="Mocarela, maslinke, sunka, sampinjoni, pelat.   Mala:160 Srednja:440 Porodicna:600"><img src="Capricciosa.jpg" class="img-circle" alt="Capricciosa" height="80" width="80"/></a>
     <div class="form-group">
             <label for="sel1" >Izaberi velicinu:</label>
             <select class="form-control"  id="sel1">
@@ -87,7 +93,7 @@
 
     <div class="container">
 
-    <a href="#" data-toggle="popover" data-placement="left" title="Margarita" data-trigger="focus" data-content="Pelat, mocarela, maslinke, bosiljak"><img src="Margarita.jpg" class="img-circle" alt="Margarita" /></a>
+    <a href="#" data-toggle="popover" data-placement="left" title="Margarita" data-trigger="focus" data-content="Pelat, mocarela, maslinke, bosiljak. Mala:160 Srednja:330 Porodicna:540"><img src="Margarita.jpg" class="img-circle" alt="Margarita" height="80" width="80" /></a>
     <div class="form-group">
             <label for="sel1" >Izaberi velicinu:</label>
             <select class="form-control"  id="sel1">
@@ -106,7 +112,7 @@
 
     <div class="container">
 
-    <a href="#" data-toggle="popover" title="Quattro Formaggi" data-trigger="focus" data-content="Mocarela, bergarder, gorgonzola, ementaler, parmezan, masline, ruzmarin"><img src="Quattro Formaggi.jpg" class="img-circle" alt="Quattro Formaggi" /></a>
+    <a href="#" data-toggle="popover" title="Quattro Formaggi" data-trigger="focus" data-content="Mocarela, bergarder, gorgonzola, ementaler, parmezan, masline, ruzmarin. Mala:220 Srednja:460 Porodicna:700  "><img src="Quattro Formaggi.jpg" class="img-circle" alt="Quattro Formaggi" height="80" width="80" /></a>
     <div class="form-group">
             <label for="sel1" >Izaberi velicinu:</label>
             <select class="form-control"  id="sel1">
@@ -125,7 +131,7 @@
 
     <div class="container">
 
-    <a href="#" data-toggle="popover" data-placement="left" title="Vezuvio" data-trigger="focus" data-content="Pelat, mocarela, sunka, maslinke, origano"><img src="Vezuvio.jpg" class="img-circle" alt="Vezuvio" /></a>
+    <a href="#" data-toggle="popover" data-placement="left" title="Vezuvio" data-trigger="focus" data-content="Pelat, mocarela, sunka, maslinke, origano.  Mala:150 Srednja:420 Porodicna:610"><img src="Vezuvio.jpg" class="img-circle" alt="Vezuvio" height="80" width="80" /></a>
     <div class="form-group">
             <label for="sel1" >Izaberi velicinu:</label>
             <select class="form-control"  id="sel1">
@@ -144,7 +150,7 @@
 
     <div class="container">
 
-    <a href="#" data-toggle="popover" title="Vegetariana" data-trigger="focus" data-content="Pelat, kackavalj, sampinjoni, sveza paprika, tikvice, crveni luk, paradajz, maslinke"><img src="Vegetariana.jpg" class="img-circle" alt="Vegetariana" /></a>
+    <a href="#" data-toggle="popover" title="Vegetariana" data-trigger="focus" data-content="Pelat, kackavalj, sampinjoni, sveza paprika, tikvice, crveni luk, paradajz, maslinke.  Mala:210 Srednja:450 Porodicna:690"><img src="Vegetariana.jpg" class="img-circle" alt="Vegetariana" height="80" width="80" /></a>
     <div class="form-group">
             <label for="sel1" >Izaberi velicinu:</label>
             <select class="form-control"  id="sel1">
@@ -163,7 +169,8 @@
 
     <div class="container">
 
-    <a href="#" data-toggle="popover" data-placement="left" title="Quattro stagioni" data-trigger="focus" data-content="1/4 Capriccosa, 1/4 Pepperoni, 1/4 Quattro Formaggi, 1/4 suvo meso"><img src="Quattro stagioni.jpg" class="img-circle" alt="Quattro stagioni" /></a><div class="form-group">
+    <a href="#" data-toggle="popover" data-placement="left" title="Quattro stagioni" data-trigger="focus" data-content="1/4 Capriccosa, 1/4 Pepperoni, 1/4 Quattro Formaggi, 1/4 suvo meso.  Mala:220 Srednja:500 Porodicna:700"><img src="Quattro stagioni.jpg" class="img-circle" alt="Quattro stagioni" height="80" width="80" /></a>
+    <div class="form-group">
             <label for="sel1" >Izaberi velicinu:</label>
             <select class="form-control"  id="sel1">
                 <option>Mala</option>
@@ -184,6 +191,38 @@
         $('[data-toggle="popover"]').popover();
     });
     </script>
+    
+    </br>
+    </br>
+
+    <h3>Kontakt</h3>
+
+    <form class="form-horizontal" action="/action_page.php">
+        <div class="form-group">
+            <label class="control-label col-sm-2">Ime i prezime:</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">Amelija Vuckovic</p>
+            </div>
+            <label class="control-label col-sm-2">Email:</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">mammamia@gmail.com</p>
+            </div>
+            <label class="control-label col-sm-2">Broj telefona:</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">064/212 77 65</p>
+            </div>
+        </div>
+    </form>
+    </div>
+
+    <footer>
+    <p><a href="https://www.instagram.com/"><img src="instagram.png" alt="instagram"  height="30" width="30" ></a>
+    <a href="https://www.facebook.com/"><img src="facebook.png" alt="facebook" width="30" height="30" ></a>
+    <a href="https://twitter.com/"><img src="twitter.png" alt="twitter" width="30" height="30" ></a></p>
+    </footer>
+
+
+
 
 
 </body>
