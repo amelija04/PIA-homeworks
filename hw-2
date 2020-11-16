@@ -15,7 +15,7 @@
     <style>
     body{
 
-        background: linear-gradient(to bottom right, #780000 0%, #d80000 100%);
+        background: linear-gradient(to bottom right, #D80000 0%, #808000 100%);
     }
     div.a{
         color:white;
@@ -61,6 +61,7 @@
     </br>
     </br>
     </br>
+    <img src="pizza.png" alt="pizza" style="float:right;"> 
 
         <h3 id="o nama">O nama</h3>
         <p>Nasa picerija nudi veliki izbor razlicitih vrsta pice. U modernom ambijentu picerije Mamma mia, za vas potpuni uzitak </br>
