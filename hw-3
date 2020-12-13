@@ -102,7 +102,7 @@
 
 
      <hr>
-     <p>Upitnik je igra provere opsteg znanja.Pred vama se nalazi 10 pitanja, s tim da neka imaju ponudjene odgovore, dok je za neke potrebno uneti odgovor.</p>
+     <p>Upitnik je igra provere opsteg znanja.Pred vama se nalazi 10 pitanja, s tim da neka imaju ponudjene odgovore, dok je za neke potrebno uneti odgovor. Imate 20 sekundi da ogovorite na svako pitanje.</p>
 
 
      <button type="submit" class="registerbtn">Zapocnite igru</button>
