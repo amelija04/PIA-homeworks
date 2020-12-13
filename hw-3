@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+   <title>PIA HW - Quiz</title>
+  <meta name="author" content="Amelija Vuckovic" />
+  <meta charset="utf-8" />
+  <meta name="description" content="HTML/CSS/JS homework assignment." />
+  <meta name="keywords" content="pia, web programming, html, css, js" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+      background-image:url("Slika1.jpg");
+  }
+  h1 {
+      font-size: 50px;
+      text-align: center;
+      font-family: 'Brush Script MT', cursive;
+      font-weight: bold;
+  }
+  p {
+      font-family: Georgia, serif;
+  }
+  div {
+      background-color: #8FBC8F;
+      position:absolute;
+      left:25%;
+      right:25%;
+  }
+  img {
+
+      width:300px;
+      height: 250px;
+      opacity:0.9;
+      border-radius: 50%;
+  }
+  * {
+  box-sizing: border-box;
+  }
+
+
+ .container {
+     padding: 10px;
+     background-color: white;
+  }
+
+
+  input[type=text], input[type=password] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0 20px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+   }
+
+  input[type=text]:focus, input[type=password]:focus {
+      background-color: #ddd;
+      outline: none;
+   }
+
+
+  hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+   }
+
+
+  .registerbtn {
+      background-color: #006400;
+      color: white;
+      padding: 16px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+   }
+
+  .registerbtn:hover {
+      opacity: 1;
+   }
+
+</style>
+</head>
+
+<body>
+    <h1>Kviz znanja</h1>
+    <img src="Upitnik.jpg" alt="Upitnik"  style="float:right"/>
+    <img src="Upitnik.jpg" alt="Upitnik"  style="float:left"/>
+    <div>
+     <form action="/action_page.php">
+     <div class="container">
+     <h1>Prijava</h1>
+
+     <hr>
+
+     <label for="email"><b>Ime</b></label>
+     <input type="text" placeholder="Unesite ime" name="email" id="email" required>
+
+
+     <hr>
+     <p>Upitnik je igra provere opsteg znanja.Pred vama se nalazi 10 pitanja, s tim da neka imaju ponudjene odgovore, dok je za neke potrebno uneti odgovor.</p>
+
+
+     <button type="submit" class="registerbtn">Zapocnite igru</button>
+     </div>
+
+
+     </form>
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
