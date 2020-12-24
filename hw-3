@@ -20,9 +20,25 @@
       font-family: 'Brush Script MT', cursive;
       font-weight: bold;
   }
+  h2{
+      text-align: center;
+      border: 3px solid rgb(16, 65, 30);
+      border-radius: 7px;
+      background-color: #064e09;
+      color: white;
+      opacity: 0.9;
+  }
   p {
       font-family: Georgia, serif;
   }
+  p.pitanje{
+    border: 3px solid rgb(16, 65, 30);
+    width: 50%;
+    border-radius: 10px;
+    background-color: #064e09;
+    color: white;
+    opacity: 0.9;
+   }
   div.a {
       background-color: #008000;
       position: absolute;
@@ -32,6 +48,9 @@
       border-radius: 10px;
       border: 2px solid black;
   }
+   div.b{
+       color:black;
+   }
   img {
 
       max-width:300px;
@@ -43,13 +62,29 @@
   * {
   box-sizing: border-box;
   }
+  .registerbtn {
+      background-color: #064e09;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 5px;
+      cursor: pointer;
+      opacity: 0.9;
+    
+   }
+   .registerbtn:active {
+       background-color: #1a691c;
+       box-shadow: 0 5px #666;
+       transform: translateY(4px);
+   }
 
-
- .container {
-     padding: 10px;
-     background-color: white;
-  }
-
+  .registerbtn:hover {
+      opacity: 1;
+   }
 
   input[type=text], input[type=password] {
       width: 100%;
@@ -59,19 +94,7 @@
       border: none;
       background: #f1f1f1;
    }
-
-  input[type=text]:focus, input[type=password]:focus {
-      background-color: #ddd;
-      outline: none;
-   }
-
-
-  hr {
-      border: 1px solid #f1f1f1;
-      margin-bottom: 25px;
-   }
-
-
+   
   .btn {
       background-color: #064e09;
       color: white;
@@ -97,6 +120,33 @@
 <body>
     <h1>Kviz znanja</h1>
     <p id="count"></p>
+    <img src="Upitnik.jpg" alt="Upitnik"  style="float:right"/>
+    <img src="Upitnik.jpg" alt="Upitnik"  style="float:left"/>
+
+    <header id="main-header">
+        <h1>
+            <center> Upitnik </center>
+        </h1>
+    </header>
+    
+    <div class="a">
+        <p id="count" style="text-align: right; text-shadow: 2px 2px #7cc4a6;font-size: 20px;"></p>
+        <div class="b">
+            <form action="/action_page.php">
+            
+            <h1>Prijava</h1>         
+            <input type="text" placeholder="Unesite ime" name="ime" id="ime" required>
+            <p>Upitnik je igra provere opšteg znanja.Pred vama se nalazi 10 pitanja. Imate 20 sekundi da odgovorite na svako pitanje.</p>
+       
+            <div class="registerbtn" id="start1" >Započni igru</div>
+    
+            </form>
+        </div>
+        <div id="quiz"></div>
+        <div class="btn" id='next'>Dalje</div>
+        <div class="btn" id='start'> Počni ispočetka</div>
+
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
         <script>
            var count = 20;
            var interval = setInterval(function(){
@@ -130,6 +180,27 @@
                 question: "Koga je Robert Bobby Fischer pobedio za titulu 1972?",
                 choices: ['Mikhail Tal', 'Vasily Smyslov', 'Boris Spasky', 'Tigran Petrosyan'],
                 correctAnswer: 2
+            },{
+                question: "Šta je pimšolj?",
+                choices: ['riba','ptica', 'insekt', 'gmizavac'],
+                correctAnswer: 0
+                
+            },{
+                question: "Ko je autor romana 'Don Kihot'?",
+                choices: ['William Shakespeare', 'Migel de Servantes', 'Federiko Garcia Lorca', 'Jorge Luis Borges'],
+                correctAnswer: 1
+            },{
+                question: "Iz koje zemlje je fabrika automobila 'Seat'?",
+                choices: ['Španija', 'Nemačka', 'Velika Britanija', 'Austrija'],
+                correctAnswer: 0
+            },{
+                question: "Čiji lik se nalazi na novčanici od 500 dinara",
+                choices: ['Nikole Tesle','Stevana Mokranjca', 'Vuka Karadzića', 'Jovana Cvijića'],
+                correctAnswer: 3
+            },{
+                question: "Simbol medicine su:",
+                choices: ['dve ukrštene epruvete','luk i strela', 'koplje i zmaj', 'štap i zmija'],
+                correctAnswer: 3
             }];
 
             var questionCounter = 0; 
@@ -169,6 +240,19 @@
                 displayNext();
                 $('#start').hide();
             });
+            
+            $('#start1').on('click', function(e) {
+                e.preventDefault();
+
+                if (quiz.is(':animated')) {
+                    return false;
+                }
+                questionCounter = 0;
+                selections = [];
+                displayNext();
+                $('.b').hide();
+                
+            });
 
             
             $('.button').on('mouseenter', function() {
@@ -187,7 +271,7 @@
                 var header = $('<h2>Pitanje broj:  ' + (index + 1) + '</h2>');
                 qElement.append(header);
 
-                var question = $('<p>').append(questions[index].question);
+                var question = $('<p class="pitanje">').append(questions[index].question);
                 qElement.append(question);
 
                 var radioButtons = createRadios(index);
@@ -252,28 +336,7 @@
             }
         })();
      </script>
-    <img src="Upitnik.jpg" alt="Upitnik"  style="float:right"/>
-    <img src="Upitnik.jpg" alt="Upitnik"  style="float:left"/>
-    <div>
-     <form action="/action_page.php">
-     <div class="container">
-     <h1>Prijava</h1>
-
-     <hr>
-
-     <label for="ime"><b>Ime</b></label>
-     <input type="text" placeholder="Unesite ime" name="ime" id="ime" required>
-
-
-     <hr>
-     <p>Upitnik je igra provere opšteg znanja.Pred vama se nalazi 10 pitanja, s tim da neka imaju ponudjene odgovore, dok je za neke potrebno uneti odgovor. Imate 20 sekundi da ogovorite na svako pitanje.</p>
-
-
-     <button type="submit"  onclick="myFunction()"  class="registerbtn">Započnite igru</button>
-     </div>
-
-
-     </form>
+    
 
 
 
