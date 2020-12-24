@@ -23,18 +23,22 @@
   p {
       font-family: Georgia, serif;
   }
-  div {
-      background-color: #8FBC8F;
-      position:absolute;
-      left:25%;
-      right:25%;
+  div.a {
+      background-color: #008000;
+      position: absolute;
+      left: 25%;
+      right: 25%;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      border-radius: 10px;
+      border: 2px solid black;
   }
   img {
 
-      width:300px;
-      height: 250px;
+      max-width:300px;
+      height: auto;
       opacity:0.9;
       border-radius: 50%;
+      padding-top: 80px;
   }
   * {
   box-sizing: border-box;
@@ -68,24 +72,23 @@
    }
 
 
-  .registerbtn {
-      background-color: #006400;
+  .btn {
+      background-color: #064e09;
       color: white;
-      padding: 16px 20px;
-      margin: 8px 0;
+      padding: 15px 32px;
       border: none;
       cursor: pointer;
-      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
       opacity: 0.9;
    }
-   .registerbtn:active {
-       background-color: #3e8e41;
+   .btn:active {
+       background-color: #1a691c;
        box-shadow: 0 5px #666;
        transform: translateY(4px);
-   }
-
-  .registerbtn:hover {
-      opacity: 1;
    }
 
 </style>
@@ -95,18 +98,159 @@
     <h1>Kviz znanja</h1>
     <p id="count"></p>
         <script>
-     
+           var count = 20;
+           var interval = setInterval(function(){
+               document.getElementById('count').innerHTML=count;
+               count--;
+               if (count === 0){
+                  clearInterval(interval);
+                  document.getElementById('count').innerHTML='Vreme je isteklo';
+                  alert("Vreme je isteklo!");
+               }
+          }, 1000);
+          
+           (function() {
+            var questions = [{
+                question: "Prvi svetski rat je počeo...",
+                choices: [1912, 1918, 1920, 1914],
+                correctAnswer: 3
+            }, {
+                question: "Glavnu ulogu u filmu Umri Muški glumi?",
+                choices: ['Arnold Švarceneger', 'Silvester Stalone', 'Brus Vilis', 'Klint Istvud'],
+                correctAnswer: 2
+            }, {
+                question: "Koliko NBA titula je osvojio Majkl Dzordan u toku svoje karijere?",
+                choices: [3, 4, 5, 6],
+                correctAnswer: 3
+            }, {
+                question: "Koliko je slika prodao Vinsent Van Gogh za života?",
+                choices: [19, 117, 1, 46],
+                correctAnswer: 2
+            }, {
+                question: "Koga je Robert Bobby Fischer pobedio za titulu 1972?",
+                choices: ['Mikhail Tal', 'Vasily Smyslov', 'Boris Spasky', 'Tigran Petrosyan'],
+                correctAnswer: 2
+            }];
 
-     var count = 20;
-     var interval = setInterval(function(){
-     document.getElementById('count').innerHTML=count;
-     count--;
-     if (count === 0){
-         clearInterval(interval);
-    document.getElementById('count').innerHTML='Vreme je isteklo';
-    alert("Vreme je isteklo!");
-    }
-}, 1000);
+            var questionCounter = 0; 
+            var selections = []; 
+            var quiz = $('#quiz'); 
+
+            
+            displayNext();
+
+            
+            $('#next').on('click', function(e) {
+                e.preventDefault();
+
+                
+                if (quiz.is(':animated')) {
+                    return false;
+                }
+                choose();
+
+                if (isNaN(selections[questionCounter])) {
+                    alert('Izaberite odgovor!');
+                } else {
+                    questionCounter++;
+                    displayNext();
+                }
+            });
+
+        
+            $('#start').on('click', function(e) {
+                e.preventDefault();
+
+                if (quiz.is(':animated')) {
+                    return false;
+                }
+                questionCounter = 0;
+                selections = [];
+                displayNext();
+                $('#start').hide();
+            });
+
+            
+            $('.button').on('mouseenter', function() {
+                $(this).addClass('active');
+            });
+            $('.button').on('mouseleave', function() {
+                $(this).removeClass('active');
+            });
+
+       
+            function createQuestionElement(index) {
+                var qElement = $('<div>', {
+                    id: 'question'
+                });
+
+                var header = $('<h2>Pitanje broj:  ' + (index + 1) + '</h2>');
+                qElement.append(header);
+
+                var question = $('<p>').append(questions[index].question);
+                qElement.append(question);
+
+                var radioButtons = createRadios(index);
+                qElement.append(radioButtons);
+
+                return qElement;
+            }
+            
+            function createRadios(index) {
+                var radioList = $('<ul>');
+                var item;
+                var input = '';
+                for (var i = 0; i < questions[index].choices.length; i++) {
+                    item = $('<li>');
+                    input = '<input type="radio" name="answer" value=' + i + ' />';
+                    input += questions[index].choices[i];
+                    item.append(input);
+                    radioList.append(item);
+                }
+                return radioList;
+            }
+            
+            function choose() {
+                selections[questionCounter] = +$('input[name="answer"]:checked').val();
+            }
+
+            function displayNext() {
+                quiz.fadeOut(function() {
+                    $('#question').remove();
+
+                    if (questionCounter < questions.length) {
+                        var nextQuestion = createQuestionElement(questionCounter);
+                        quiz.append(nextQuestion).fadeIn();
+                        if (!(isNaN(selections[questionCounter]))) {
+                            $('input[value=' + selections[questionCounter] + ']').prop('checked', true);
+                        }
+
+                        
+                    } else {
+                        var scoreElem = displayScore();
+                        quiz.append(scoreElem).fadeIn();
+                        $('#next').show();
+                        $('#start').show();
+                    }
+                });
+            }
+
+            function displayScore() {
+                var score = $('<p>', {
+                    id: 'question'
+                });
+
+                var numCorrect = 0;
+                for (var i = 0; i < selections.length; i++) {
+                    if (selections[i] === questions[i].correctAnswer) {
+                        numCorrect++;
+                    }
+                }
+
+                score.append('Osvojili ste ' + numCorrect + ' poena');
+                return score;
+            }
+        })();
      </script>
     <img src="Upitnik.jpg" alt="Upitnik"  style="float:right"/>
     <img src="Upitnik.jpg" alt="Upitnik"  style="float:left"/>
