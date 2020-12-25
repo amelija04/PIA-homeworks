@@ -61,33 +61,10 @@
   }
   * {
   box-sizing: border-box;
+  padding: 3px;
   }
-  .registerbtn {
-      background-color: #064e09;
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 10px 5px;
-      cursor: pointer;
-      opacity: 0.9;
-    
-   }
-   .registerbtn:active {
-       background-color: #1a691c;
-       box-shadow: 0 5px #666;
-       transform: translateY(4px);
-   }
-
-  .registerbtn:hover {
-      opacity: 1;
-   }
-
+ 
   input[type=text], input[type=password] {
-      width: 100%;
       padding: 10px;
       margin: 5px 0 20px 0;
       display: inline-block;
@@ -118,8 +95,6 @@
 </head>
 
 <body>
-    <h1>Kviz znanja</h1>
-    <p id="count"></p>
     <img src="Upitnik.jpg" alt="Upitnik"  style="float:right"/>
     <img src="Upitnik.jpg" alt="Upitnik"  style="float:left"/>
 
@@ -136,29 +111,20 @@
             
             <h1>Prijava</h1>         
             <input type="text" placeholder="Unesite ime" name="ime" id="ime" required>
-            <p>Upitnik je igra provere opšteg znanja.Pred vama se nalazi 10 pitanja. Imate 20 sekundi da odgovorite na svako pitanje.</p>
-       
-            <div class="registerbtn" id="start1" >Započni igru</div>
+            <div class="btn" id="start1" >Započni igru</div>
     
             </form>
         </div>
+        <div class="rules" id="rules">
+            <p>Upitnik je igra provere opšteg znanja.Pred vama se nalazi 10 pitanja. Imate 20 sekundi da odgovorite na svako pitanje. Svaki tačan odgovor nosi 1 poen. U svakom trenutku možete završiti kviz i videti osvojeni broj poena. </br> Srećno!</p>
+        </div>
         <div id="quiz"></div>
         <div class="btn" id='next'>Dalje</div>
-        <div class="btn" id='start'> Počni ispočetka</div>
+        <div class="btn" id='end'>Završi kviz</div>
+        <div class="btn" id='start'>Počni kviz</div>
 
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
         <script>
-           var count = 20;
-           var interval = setInterval(function(){
-               document.getElementById('count').innerHTML=count;
-               count--;
-               if (count === 0){
-                  clearInterval(interval);
-                  document.getElementById('count').innerHTML='Vreme je isteklo';
-                  alert("Vreme je isteklo!");
-               }
-          }, 1000);
-          
            (function() {
             var questions = [{
                 question: "Prvi svetski rat je počeo...",
@@ -194,7 +160,7 @@
                 choices: ['Španija', 'Nemačka', 'Velika Britanija', 'Austrija'],
                 correctAnswer: 0
             },{
-                question: "Čiji lik se nalazi na novčanici od 500 dinara",
+                question: "Čiji lik se nalazi na novčanici od 500 dinara?",
                 choices: ['Nikole Tesle','Stevana Mokranjca', 'Vuka Karadzića', 'Jovana Cvijića'],
                 correctAnswer: 3
             },{
@@ -206,31 +172,47 @@
             var questionCounter = 0; 
             var selections = []; 
             var quiz = $('#quiz'); 
-
             
-            displayNext();
-
-            
-            $('#next').on('click', function(e) {
-                e.preventDefault();
-
-                
-                if (quiz.is(':animated')) {
-                    return false;
-                }
-                choose();
-
-                if (isNaN(selections[questionCounter])) {
-                    alert('Izaberite odgovor!');
-                } else {
-                    questionCounter++;
-                    displayNext();
-                }
+           $(document).ready(function(){
+                $('#next').hide();
+                $('#start').hide();
+                $('#end').hide();
+                $('.rules').hide();
             });
 
-        
+            function timer(){
+                var count = 20;
+                var interval = setInterval(function(){
+                document.getElementById('count').innerHTML=count;
+                count--;
+                if (count === 0){
+                clearInterval(interval);
+                document.getElementById('count').innerHTML='Vreme je isteklo';
+                alert("Vreme je isteklo!");
+                }
+                }, 1000);
+
+            }
+           $('#next').on('click', function(e) {
+                e.preventDefault();
+                document.getElementById("count").innerHTML = timer(count);
+               
+                if (quiz.is(':animated')) {
+                    return false;
+                
+                }
+                choose();
+                questionCounter++;
+                displayNext();
+                $('.rules').hide();
+                $('#end').show();
+
+            
+            });
+           
             $('#start').on('click', function(e) {
                 e.preventDefault();
+                document.getElementById("count").innerHTML = timer(count);
 
                 if (quiz.is(':animated')) {
                     return false;
@@ -239,30 +221,51 @@
                 selections = [];
                 displayNext();
                 $('#start').hide();
+                $('.rules').hide();
+                $('#next').show();
+
+                
+                
             });
-            
+
+            $('#end').on('click', function(e) {
+                e.preventDefault();
+                var scoreElem = displayScore();
+                quiz.append(scoreElem).fadeIn();
+              
+                $('#next').hide();
+                $('#start').hide();
+                $('#end').hide();
+                $('#questions').hide();
+            });
+
             $('#start1').on('click', function(e) {
                 e.preventDefault();
-
+                
+            
                 if (quiz.is(':animated')) {
                     return false;
                 }
                 questionCounter = 0;
                 selections = [];
-                displayNext();
                 $('.b').hide();
+                $('.rules').fadeIn();
+                $('#start').fadeIn();
                 
-            });
 
+                
+               
+            });
             
-            $('.button').on('mouseenter', function() {
+             $('.button').on('mouseenter', function() {
                 $(this).addClass('active');
             });
             $('.button').on('mouseleave', function() {
                 $(this).removeClass('active');
             });
 
-       
+           
+
             function createQuestionElement(index) {
                 var qElement = $('<div>', {
                     id: 'question'
@@ -279,7 +282,8 @@
 
                 return qElement;
             }
-            
+
+           
             function createRadios(index) {
                 var radioList = $('<ul>');
                 var item;
@@ -293,13 +297,15 @@
                 }
                 return radioList;
             }
-            
+
+        
             function choose() {
                 selections[questionCounter] = +$('input[name="answer"]:checked').val();
             }
-
+            
             function displayNext() {
                 quiz.fadeOut(function() {
+               
                     $('#question').remove();
 
                     if (questionCounter < questions.length) {
@@ -307,35 +313,45 @@
                         quiz.append(nextQuestion).fadeIn();
                         if (!(isNaN(selections[questionCounter]))) {
                             $('input[value=' + selections[questionCounter] + ']').prop('checked', true);
+                           
                         }
 
                         
                     } else {
                         var scoreElem = displayScore();
                         quiz.append(scoreElem).fadeIn();
-                        $('#next').show();
-                        $('#start').show();
+                        $('#next').hide();
+                        $('#start').hide();
+                        $('#end').hide();
                     }
                 });
             }
 
+           
             function displayScore() {
+             
                 var score = $('<p>', {
                     id: 'question'
+                    
                 });
 
                 var numCorrect = 0;
                 for (var i = 0; i < selections.length; i++) {
                     if (selections[i] === questions[i].correctAnswer) {
                         numCorrect++;
+                      
                     }
+                  
                 }
+               
 
                 score.append('Osvojili ste ' + numCorrect + ' poena');
                 return score;
+
             }
         })();
-     </script>
+    
+    </script>
     
 
 
