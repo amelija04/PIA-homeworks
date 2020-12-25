@@ -90,6 +90,13 @@
        box-shadow: 0 5px #666;
        transform: translateY(4px);
    }
+   ul{
+       list-style-type: none;
+       background: #064e09;
+       color: white;
+       border: 3px solid rgb(16, 65, 30);
+       border-radius: 10px;
+   }
 
 </style>
 </head>
@@ -188,7 +195,6 @@
                 if (count === 0){
                 clearInterval(interval);
                 document.getElementById('count').innerHTML='Vreme je isteklo';
-                alert("Vreme je isteklo!");
                 }
                 }, 1000);
 
