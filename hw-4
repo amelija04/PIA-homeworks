@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PIA HW - Movie review</title>
+        <meta name="author" content="Amelija Vučković" />
+        <meta charset="utf-8" />
+        <meta name="description" content="HTML/CSS/JS/PHP homework assignment." />
+        <meta name="keywords" content="pia, web programming, html, css, js, php" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            body{
+                background-image: url("pozadina.jpg");
+               
+            }
+            div.centralni{
+                background: linear-gradient(to bottom right, #111113 0%, #7a6d94 100%);
+                position: absolute;
+                left:30%;
+                right:30%;
+                margin-top: 10%;
+                border:3px solid rgb(9, 8, 10);
+                border-radius: 10px;
+                text-align:center;
+               
+            }
+            p.registracija{
+                color:blanchedalmond;
+
+            }
+            h1{
+                color: blanchedalmond; 
+            }
+            div.napraviNalog{
+                
+                margin-bottom: 3px;
+                color: blanchedalmond;
+                background: linear-gradient(to bottom right, #111113 0%, #7a6d94 100%);
+                position: absolute;
+                left:30%;
+                right:30%;
+                margin-top: 10%;
+                border:3px solid rgb(9, 8, 10);
+                border-radius: 10px;
+                text-align:center;
+                padding: 20px 20px;
+            }
+            div.prijava{
+                margin-bottom: 3px;
+                color: blanchedalmond;
+                background: linear-gradient(to bottom right, #111113 0%, #7a6d94 100%);
+                position: absolute;
+                left:30%;
+                right:30%;
+                margin-top: 10%;
+                border:3px solid rgb(9, 8, 10);
+                border-radius: 10px;
+                text-align:center;
+                padding: 20px 20px;
+            }
+            .dugme{
+                background-color:#0e0e1f;
+                color: blanchedalmond;
+                font-size:16px;
+                margin: 4px 2px;
+                padding: 12px 28px;
+                cursor:pointer;
+            }
+            .dugme:hover {
+                
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+            
+           
+        </style>
+       
+
+    </head>
+    <body>
+        
+        <div class="centralni" id="centralni">
+           <h1>Grad filmova</h1>
+          
+           <button class="dugme" id='nalog'>Napravi nalog</button>
+           <br>
+           <p class="registracija" style="font-size: 12px;">Već imate nalog? Prijavite se:</p>
+           <button class="dugme" id='prijaviteSe'>Prijavite se</button>
+
+
+          
+
+        </div>
+        <div class="napraviNalog" id="napraviNalog">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?></form>
+            Ime: 
+            <br>
+            <input type="text" ime="ime">
+            <br> 
+            Prezime:
+            <br>
+             <input type="text" prezime="prezime">
+            <br>
+            E-mail:
+            <br>
+             <input type="text" email="email">
+            <br>
+            Korisničko ime: 
+            <br>
+            <input type="text" korisničko ime="korisničko ime">
+            <br>
+            Lozinka:
+            <br>
+            <input type="password" lozinka="lozinka">
+            <br><br>
+            <input type="submit" value="Registracija">  
+            </form>
+           </div>
+
+           <div class="prijava" id="prijava">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?></form>
+            Korisničko ime: 
+            <br>
+            <input type="text" korisničko ime="korisničko ime">
+            <br> 
+            Lozinka:
+            <br>
+             <input type="password" lozinka="lozinka">
+            <br><br>
+            <input type="submit" value="Prijava">  
+           </div>
+
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+           <script>
+               
+               $(document).ready(function(){
+                $(".napraviNalog").hide();
+                $(".prijava").hide(); 
+           
+                $("#nalog").click(function() {
+                   $(".napraviNalog").show();
+                   $(".centralni").hide(); 
+                   $(".prijava").hide(); 
+                });
+               });
+
+               $("#prijaviteSe").click(function() {
+                   $(".napraviNalog").hide();
+                   $(".centralni").hide(); 
+                   $(".prijava").show(); 
+                });
+           
+           </script>
+   
+         
+        
+        
+
+    </body>
+</html>
