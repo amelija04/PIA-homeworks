@@ -18,45 +18,12 @@
                 position: absolute;
                 left:30%;
                 right:30%;
-                margin-top: 10%;
+                margin-top: 5%;
                 border:3px solid rgb(9, 8, 10);
                 border-radius: 10px;
                 text-align:center;
-               
-            }
-            p.registracija{
                 color:blanchedalmond;
-
-            }
-            h1{
-                color: blanchedalmond; 
-            }
-            div.napraviNalog{
-                
-                margin-bottom: 3px;
-                color: blanchedalmond;
-                background: linear-gradient(to bottom right, #111113 0%, #7a6d94 100%);
-                position: absolute;
-                left:30%;
-                right:30%;
-                margin-top: 10%;
-                border:3px solid rgb(9, 8, 10);
-                border-radius: 10px;
-                text-align:center;
-                padding: 20px 20px;
-            }
-            div.prijava{
-                margin-bottom: 3px;
-                color: blanchedalmond;
-                background: linear-gradient(to bottom right, #111113 0%, #7a6d94 100%);
-                position: absolute;
-                left:30%;
-                right:30%;
-                margin-top: 10%;
-                border:3px solid rgb(9, 8, 10);
-                border-radius: 10px;
-                text-align:center;
-                padding: 20px 20px;
+                padding: 20px 20px; 
             }
             .dugme{
                 background-color:#0e0e1f;
@@ -67,86 +34,200 @@
                 cursor:pointer;
             }
             .dugme:hover {
-                
                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
             }
-            
-           
+            input.a[type=text] {
+                width: 130px;
+                box-sizing: border-box;
+                border: 2px solid #ccc;
+                border-radius: 4px;
+                font-size: 16px;
+                background-color: white;
+                padding:10px 0px 12px 20px;
+                -webkit-transition: width 0.4s ease-in-out;
+                transition: width 0.4s ease-in-out;
+            }
+
+            input.a[type=text]:focus {
+                width: 80%;
+            }
+            .ocena:not(:checked) > input {
+                position:absolute;
+                top:-9999px;
+            }
+            .ocena:not(:checked) > label {
+                float:right;
+                width:1em;
+                overflow:hidden;
+                white-space:nowrap;
+                cursor:pointer;
+                font-size:30px;
+                color:#ccc;
+            }
+            .ocena:not(:checked) > label:before {
+                content: '★ ';
+            }
+            .ocena > input:checked ~ label {
+                color: #ffc700;    
+            }
+            .ocena:not(:checked) > label:hover,
+            .ocena:not(:checked) > label:hover ~ label {
+                color: #deb217;  
+            }
+            table, th, td{
+              border-collapse: collapse;
+              text-align:left;
+              padding:10px;
+            }
+            th, td{
+              border-bottom: 1px solid #ddd;
+            }
+            tr:hover {
+              background-color: #0e0e1f;
+            }
+                       
         </style>
        
-
     </head>
     <body>
-        
+         <img src="logo.png" alt="imdb" style="max-width: 15%; max-height: 10%; margin-left: auto;  margin-right: auto; display: block;">
         <div class="centralni" id="centralni">
-           <h1>Grad filmova</h1>
-          
-           <button class="dugme" id='nalog'>Napravi nalog</button>
-           <br>
-           <p class="registracija" style="font-size: 12px;">Već imate nalog? Prijavite se:</p>
-           <button class="dugme" id='prijaviteSe'>Prijavite se</button>
-
-
-          
-
-        </div>
-        <div class="napraviNalog" id="napraviNalog">
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?></form>
+           <div class="početno">
+              <form method="post"  ></form>
+              Korisničko ime: 
+              <br>
+              <input type="text" id="korIme" korisničko ime="korisničko ime">
+              <br> 
+              Lozinka:
+              <br>
+               <input type="password"  id="pass2" lozinka="lozinka">
+              <br><br>
+              <button class="dugme"  id='login' onclick="Ime()" >Prijava</button>
+              <br>
+              <p class="registracija" style="font-size: 12px;">Napravite nalog: </p>
+            
+                <button class="dugme" id='nalog'>Napravi nalog</button>
+            </div>
+        
+         <div class="napraviNalog" id="napraviNalog">
+            <form method="post" ></form>
             Ime: 
             <br>
-            <input type="text" ime="ime">
+            <input type="text" id="name1" ime="ime">
             <br> 
             Prezime:
             <br>
-             <input type="text" prezime="prezime">
+             <input type="text"id="surname" prezime="prezime">
             <br>
             E-mail:
             <br>
-             <input type="text" email="email">
+             <input type="text" id="email" email="email">
             <br>
             Korisničko ime: 
             <br>
-            <input type="text" korisničko ime="korisničko ime">
+            <input type="text" id="name11" korisničko ime="korisničko ime">
             <br>
             Lozinka:
             <br>
-            <input type="password" lozinka="lozinka">
+            <input type="password" id="pass1" lozinka="lozinka">
             <br><br>
-            <input type="submit" value="Registracija">  
+            <button class="dugme" id='registracija'>Registracija</button>
             </form>
            </div>
+           
+           <div class="trazifilm">
+            <form>
+                <input class="a" type="text" name="trazi" placeholder="Pretraga...">
+              </form>
+              <br>
+              <div class="filmovi" id="filmovi">
+                <table id="filmovi_tabela">
+                  <tr>
+                    <th>Naslov</th>
+                  </tr>
+                  <tr>
+                    <th>Opis</th>
+                  </tr>
+                  <tr>
+                    <th>Žanr</th>
+                  </tr>
+                  <tr>
+                    <th>Scenarista</th>
+                  </tr>
+                  <tr>
+                    <th>Režiser</th>
+                  </tr>
+                  <tr>
+                    <th>Producentska kuća</th>
+                  </tr>
+                  <tr>
+                    <th>Glumci</th>
+                  </tr>
+                  <tr>
+                    <th>Godina izdavanja</th>
+                  </tr>
+                  <tr>
+                    <th>Trajanje</th>
+                  </tr>
+                </table>
+                <div class="ocena">
+                  <input type="radio" id="star5" name="rate" value="5" />
+                  <label for="star5" title="text">5 zvezdica</label>
+                  <input type="radio" id="star4" name="rate" value="4" />
+                  <label for="star4" title="text">4 zvezdice</label>
+                  <input type="radio" id="star3" name="rate" value="3" />
+                  <label for="star3" title="text">3 zvezdice</label>
+                  <input type="radio" id="star2" name="rate" value="2" />
+                  <label for="star2" title="text">2 zvezdice</label>
+                  <input type="radio" id="star1" name="rate" value="1" />
+                  <label for="star1" title="text">1 zvezdica</label>
+                </div>
 
-           <div class="prijava" id="prijava">
-            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?></form>
-            Korisničko ime: 
-            <br>
-            <input type="text" korisničko ime="korisničko ime">
-            <br> 
-            Lozinka:
-            <br>
-             <input type="password" lozinka="lozinka">
-            <br><br>
-            <input type="submit" value="Prijava">  
+              </div>
+      
            </div>
+      
+        </div>
+       
+
 
            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
            <script>
                
                $(document).ready(function(){
                 $(".napraviNalog").hide();
-                $(".prijava").hide(); 
+                $(".trazifilm").hide(); 
            
                 $("#nalog").click(function() {
                    $(".napraviNalog").show();
-                   $(".centralni").hide(); 
-                   $(".prijava").hide(); 
+                   $(".početno").hide(); 
+                   $(".trazifilm").hide(); 
                 });
                });
 
-               $("#prijaviteSe").click(function() {
+              $("#login").click(function() {
+                  var name2 = $("#korIme").val().toString();
+                  var pass2 = $("#pass2").val().toString();
+                   if (name2 != "" && pass2 !=""){
                    $(".napraviNalog").hide();
-                   $(".centralni").hide(); 
-                   $(".prijava").show(); 
+                   $(".početno").hide(); 
+                   $(".trazifilm").fadeIn(); 
+                   }
+                   
+                });
+
+                $("#registracija").click(function() {
+                  var name1 = $("#name1").val().toString();
+                  var surname = $("#surname").val().toString();
+                  var email = $("#email").val().toString();
+                  var name11 = $("#name11").val().toString();
+                  var pass1 = $("#pass1").val().toString();
+                  if (name1 != "" && surname != "" && email != "" && name11 != "" && pass1 !=""){
+                    $(".napraviNalog").hide();
+                    $(".početno").hide(); 
+                    $(".trazifilm").fadeIn();
+                  }
+                   
                 });
            
            </script>
