@@ -3,7 +3,11 @@
     <head>
       
         <link rel="stylesheet" href="style.css">
-
+        <script>
+        function movies(){           
+            window.location.href="main.php";                   
+        }
+        </script>
         <body>
         <?php
              $name = $surname = $email = $username = $password ="";
@@ -23,7 +27,7 @@
              }
              ?>
              <div class="central">
-             <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+             <form method="post" action="database.php">  
                  Name: <br> <input type="text" name="name">
                  <br>
                  Surname: <br> <input type="text" name="surname">
@@ -34,7 +38,7 @@
                  <br>
                  Password: <br> <input type="text" name="password">  
                  <br><br>
-                 <input  class="btn" type="submit" name="Sign uo" value="Sign up">  
+                 <input  class="btn" onclick="movies()" type="submit" name="Sign up" value="Sign up">  
                  </form>
          </div>
 </body>
